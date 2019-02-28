@@ -1,8 +1,5 @@
 # docker-openjabnab
-(Fork of [fbricon/openjabnab-docker](https://github.com/fbricon/openjabnab-docker) with some issues fixes)
-
-
-Image build on DockerHub : https://hub.docker.com/r/antoineaumjaud/docker-openjabnab/
+(Fork of [ antoineaumjaud/docker-openjabnab/](https://hub.docker.com/r/antoineaumjaud/docker-openjabnab/) with some issues fixes)
 
 ## Updates
 TODO after image pulled: 
