@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER Antoine Aumjaud <antoine_dev@aumjaud.fr>
+MAINTAINER ADN182
 
 RUN apt-get update && apt-get install -y \
 	ca-certificates \
@@ -25,7 +25,7 @@ RUN a2enmod rewrite
 CMD mkdir /var/www
 WORKDIR /var/www
 
-RUN git clone --depth 1 https://github.com/OpenJabNab/OpenJabNab.git
+RUN git clone --depth 1 https://github.com/ADN182/OpenJabNab.git
 WORKDIR OpenJabNab/server
 
 RUN qmake -r
@@ -34,8 +34,9 @@ RUN make
 RUN cp ./openjabnab.ini-dist ./bin/openjabnab.ini
 RUN sed -i -e"s/^StandAloneAuthBypass = false/StandAloneAuthBypass=true/" ./bin/openjabnab.ini \
  && sed -i -e"s/^AllowUserManageBunny=false/AllowUserManageBunny=true/" ./bin/openjabnab.ini \
- && sed -i -e"s/^AllowUserManageZtamp=false/AllowUserManageZtamp=true/" ./bin/openjabnab.ini 
-
+ && sed -i -e"s/^AllowUserManageZtamp=false/AllowUserManageZtamp=true/" ./bin/openjabnab.ini \
+ && sed -i -e"s/^AllowAnonymousRegistration=false/AllowAnonymousRegistration=true/" ./bin/openjabnab.ini 
+ 
 ENV APP_ROOTURL localhost
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
