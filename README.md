@@ -4,6 +4,7 @@
 ## Updates
 TODO after image pulled: 
 - change [OpenJabNabServers] in config file /var/www/OpenJabNab/server/bin with your domain
+You can make a volume mapping with your own openjabnab config file pointing on that internal container file : /var/www/OpenJabNab/server/bin/openjabnab.ini
 
 ## Ports
 - port 80:  PHP web site for administraction (shoul be exposed)
